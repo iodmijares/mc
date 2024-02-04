@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style/css/styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Hi Idol Date tayo sa 14?</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var button = document.getElementById('noButton');
+                        var x = Math.random() * (window.innerWidth - button.offsetWidth);
+                        var y = Math.random() * (window.innerHeight - button.offsetHeight);
+                
+                        // Ensure the button stays within the visible area
+                        x = Math.max(0, x);
+                        y = Math.max(0, y);
+                
+                        button.style.position = 'absolute'; // or 'relative'
+                        button.style.left = `${x}px`;
+                        button.style.top = `${y}px`;
+                        button.style.zIndex = '999'; // Adjust the value based on your layout
+                    }
+                </script>
+                
+            </div>
+        </div>
+       
+    </body> 
+</html>
